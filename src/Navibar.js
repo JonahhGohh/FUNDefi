@@ -9,7 +9,10 @@ import {
     Link,
 } from 'react-router-dom';
 import Home from './Home';
-
+import MyFundraisers from './MyFundraisers';
+import Discover from './Discover';
+import CreateFundraiser from './CreateFundraiser';
+import ConnectWallet from './ConnectWallet';
 class Navibar extends Component {
     state = {}
     render() {
@@ -33,18 +36,18 @@ class Navibar extends Component {
                         <Route path="/">
                             <Home />
                         </Route>
-                        {/* <Route path="/discover">
+                        <Route path="/discover">
                             <Discover />
                         </Route>
                         <Route path="/fundraiser">
-                            <Fundraiser />
+                            <MyFundraisers />
                         </Route>
                         <Route path="/connectWallet">
                             <ConnectWallet />
                         </Route>
                         <Route path="/createFundraiser">
                             <CreateFundraiser />
-                        </Route> */}
+                        </Route>
                     </Switch>
                 </div>
             </Router>
