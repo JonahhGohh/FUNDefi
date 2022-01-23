@@ -10,6 +10,7 @@ import ConnectWallet from "./ConnectWallet";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import WidthContainer from "./components/WidthContainer";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -24,15 +25,15 @@ function App() {
             <Route path="/discover">
               <Discover />
             </Route>
-            <Route path="/fundraiser">
+            <PrivateRoute path="/fundraiser">
               <MyFundraisers />
-            </Route>
-            <Route path="/connectWallet">
+            </PrivateRoute>
+            <PrivateRoute path="/connectWallet">
               <ConnectWallet />
-            </Route>
-            <Route path="/createFundraiser">
+            </PrivateRoute>
+            <PrivateRoute path="/createFundraiser">
               <CreateFundraiser />
-            </Route>
+            </PrivateRoute>
             <Route path="/signIn">
               <WidthContainer>
                 <SignIn />
