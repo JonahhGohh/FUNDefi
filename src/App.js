@@ -4,10 +4,11 @@ import Navibar from "./Navibar"
 
 function App() {
   return (
-      <div>
+      <div className="App">
         <Navibar />
       </div>
   );
 }
 
 export default App;
+
