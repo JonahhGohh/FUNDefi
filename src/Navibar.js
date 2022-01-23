@@ -9,6 +9,8 @@ import Discover from "./Discover";
 import CreateFundraiser from "./CreateFundraiser";
 import ConnectWallet from "./ConnectWallet";
 import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import WidthContainer from "./components/WidthContainer";
 
 class Navibar extends Component {
   state = {};
@@ -86,7 +88,14 @@ class Navibar extends Component {
               <CreateFundraiser />
             </Route>
             <Route path="/signIn">
-              <SignIn />
+              <WidthContainer>
+                <SignIn />
+              </WidthContainer>
+            </Route>
+            <Route path="/signUp">
+              <WidthContainer>
+                <SignUp />
+              </WidthContainer>
             </Route>
           </Switch>
         </div>
