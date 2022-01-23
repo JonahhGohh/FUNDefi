@@ -28,8 +28,6 @@ export const MyFundraisers = () => {
         if (!showModal) {
             setCurrStat([name, clicks, likes, price])
             setShowModal(true)
-        } else {
-            setShowModal(false)
         }
     }
 
@@ -64,9 +62,9 @@ export const MyFundraisers = () => {
             {showModal && <div className="moda" tabIndex="-1" role="dialog">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title">{currStat[0]}</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <div className="modal-header" style={{ textAlign:'center'}}>
+                            <h5 className="modal-title" style={{ textAlign:'center'}}>{currStat[0]}</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => setShowModal(false)}>
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -76,8 +74,7 @@ export const MyFundraisers = () => {
                             <p>Price: {currStat[3]}</p>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={() => setShowModal(false)}>Close</button>
                         </div>
                     </div>
                 </div>
