@@ -5,12 +5,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import MyFundraisers from "./MyFundraisers";
 import Discover from "./Discover";
-import CreateFundraiser from "./createFundraiser";
+import CreateFundraiser from "./CreateFundraiser";
 import ConnectWallet from "./ConnectWallet";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import WidthContainer from "./components/WidthContainer";
 import PrivateRoute from "./components/PrivateRoute";
+import IndivProj from "./IndivProj";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/createFundraiser">
               <CreateFundraiser />
+            </PrivateRoute>
+            <PrivateRoute path="/indivProj">
+              <IndivProj />
             </PrivateRoute>
             <Route path="/signIn">
               <WidthContainer>
