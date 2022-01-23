@@ -28,8 +28,6 @@ export const MyFundraisers = () => {
         if (!showModal) {
             setCurrStat([name, clicks, likes, price])
             setShowModal(true)
-        } else {
-            setShowModal(false)
         }
     }
 
@@ -66,7 +64,7 @@ export const MyFundraisers = () => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title">{currStat[0]}</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => setShowModal(false)}>
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
