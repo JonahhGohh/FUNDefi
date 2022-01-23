@@ -3,13 +3,22 @@ import './App.css';
 import { Button, Card, CardGroup, ButtonGroup, ProgressBar} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useEffect, useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 export const Home = () => {
+
+  let history = useHistory();
+
+  const goToIndivProj = () => {
+      history.push({
+          pathname: "/indivProj"
+      })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-
         <h1 style={{marginTop: '60px', color: 'white' }}>Welcome to FUNDefi</h1>
 
         <h2 style={{marginTop: '35px', marginBottom: '35px', width: '900px', color: 'cyan' }}>Fundefi is a fundraising platform where you can list NFT projects for crowdfunding and donate to other projects!</h2>
@@ -34,7 +43,7 @@ export const Home = () => {
             <Card.Text className="border d-flex align-items-center justify-content-center">
             This project seeks to raise awareness for the deforestation and protect forests.
             </Card.Text>
-            <Button className="mx-1 py-3 px-3" variant="dark" size="lg">Find out more</Button>
+            <Button className="mx-1 py-3 px-3" variant="dark" size="lg" onClick={goToIndivProj}>Find out more</Button>
             <Button className="mx-1 py-3 px-3" variant="primary" size="lg">Donate now</Button>
           </Card.Body>
           <Card.Footer className="text-muted">Started 2 days ago</Card.Footer>
@@ -50,7 +59,7 @@ export const Home = () => {
             <Card.Text className="border d-flex align-items-center justify-content-center">
             This project aims to raise USD$200,000 to build schools in rural Ethiopia so that education is accesible for more children.
             </Card.Text>
-            <Button className="mx-1 py-3 px-3" variant="dark" size="lg">Find out more</Button>
+            <Button className="mx-1 py-3 px-3" variant="dark" size="lg" onClick={goToIndivProj}>Find out more</Button>
             <Button className="mx-1 py-3 px-3" variant="primary" size="lg">Donate now</Button>
           </Card.Body>
           <Card.Footer className="text-muted">Started 2 days ago</Card.Footer>
@@ -66,7 +75,7 @@ export const Home = () => {
             <Card.Text className="border d-flex align-items-center justify-content-center">
             This project seeks to raise awareness for the deforestation and the earth is at risk of global warming.
             </Card.Text>
-            <Button className="mx-1 py-3 px-3" variant="dark" size="lg">Find out more</Button>
+            <Button className="mx-1 py-3 px-3" variant="dark" size="lg" onClick={goToIndivProj}>Find out more</Button>
             <Button className="mx-1 py-3 px-3" variant="primary" size="lg">Donate now</Button>
           </Card.Body>
           <Card.Footer className="text-muted">Started 2 days ago</Card.Footer>
