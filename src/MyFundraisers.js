@@ -1,86 +1,113 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
-import 'jquery/dist/jquery.min.js';
-
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Card, Container, Row, Col, Button } from "react-bootstrap";
+import ProgressModal from "./components/ProgressModal";
+import OutreachModal from "./components/OutreachModal";
+import FundWithdrawlModal from "./components/FundWithdrawlModal";
 
 export const MyFundraisers = () => {
-
-
-    const stats = [{
-        name: 'Save the forests',
-        description: 'This project seeks to raise awareness for the deforestation and the earth is at risk of global warming.',
-        clicks: 5,
-        likes: 10,
-        price: '0.0001 eth'
+  const stats = [
+    {
+      name: "Save the forests",
+      description:
+        "This project seeks to raise awareness for the deforestation and the earth is at risk of global warming.",
+      image: require("./images/forest.jpg"),
+      clicks: 221,
+      fundsRaised: "12,000 USD",
+      target: "15,000 USD",
+      sol: "20.5",
+      eth: "2.3",
+      btc: "0.05",
+      dot: "53",
     },
     {
-        name: 'Help these children',
-        description: 'This project hopes to raise awareness for children in Kenya and the proceeds will help provide them with meals.',
-        clicks: 21,
-        likes: 3,
-        price: '0.0023 eth'
-    }]
+      name: "Help these children",
+      description:
+        "This project hopes to raise awareness for children in Kenya and the proceeds will help provide them with meals.",
+      image: require("./images/school.jpg"),
+      clicks: 21,
+      likes: 3,
+      price: "0.0023 eth",
+    },
+  ];
 
-    const [showModal, setShowModal] = useState(false);
-    const [currStat, setCurrStat] = useState(null);
+  const [showProgressModal, setShowProgressModal] = useState(false);
+  const [showOutreachModal, setShowOutreachModal] = useState(false);
+  const [showFundWithdrawalModal, setShowFundWithdrawalModal] = useState(false);
 
-    const changeModalState = (name, clicks, likes, price) => {
-        if (!showModal) {
-            setCurrStat([name, clicks, likes, price])
-            setShowModal(true)
-        }
-    }
+  useEffect(() => {}, []);
 
-
-    useEffect(() => {
-
-    }, [])
-
-    return (
-        <div style={{ backgroundColor: '#000080', height:'1200px' }}>
-            <div>
-                <h1 style={{ marginTop: '35px', color: 'white' }}>My Fundraiser</h1>
-            </div>
-            <div >
-                <ol className="list-group list-group-numbered" style={{ padding: '10px', textAlign: 'left', color: 'rgb(188, 206, 218)' }}>
-                    {stats && stats.map((stat, index) => {
-                        return (
-                            <div className="card" key={index}>
-                                {/* <img className="card-img-top" src="..." alt="Card image cap"> */}
-                                <div className="card-body">
-                                    <h4 className="card-title" style={{ color: 'black' }}>{stat.name}</h4>
-                                    <p className="card-text" style={{ color: 'black' }}>{stat.description}</p>
-                                    <button type="button" className="btn btn-primary" onClick={() => changeModalState(stat.name, stat.clicks, stat.likes, stat.price)}>View Statistics</button>
-
-                                </div>
-                                <div style={{ height: '20px' }}></div>
-                            </div>
-                        )
-                    })}
-                </ol>
-            </div>
-            {showModal && <div className="moda" tabIndex="-1" role="dialog">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header" style={{ textAlign:'center'}}>
-                            <h5 className="modal-title" style={{ textAlign:'center'}}>{currStat[0]}</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => setShowModal(false)}>
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <p>Clicks: {currStat[1]}</p>
-                            <p>Likes: {currStat[2]}</p>
-                            <p>Price: {currStat[3]}</p>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={() => setShowModal(false)}>Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>}
-        </div >
-    )
-}
+  return (
+    <div style={{ backgroundColor: "#282c34", height: "1200px" }}>
+      <div style={{ paddingTop: "5em" }}>
+        <h1 style={{ color: "white" }}>My Fundraisers</h1>
+        <Container>
+          {stats.map((info) => (
+            <Row style={{ marginTop: "2em" }}>
+              <Card>
+                <Card.Body>
+                  <Container fluid>
+                    <Row>
+                      <Col>
+                        <Card.Img
+                          variant="left"
+                          src={info.image}
+                          style={{
+                            height: "15em",
+                            width: "25em",
+                            objectFit: "fill",
+                          }}
+                        />
+                      </Col>
+                      <Col>
+                        <Card.Title>{info.name}</Card.Title>
+                        <Card.Text>{info.description}</Card.Text>
+                        <Button
+                          style={{ marginLeft: "0.3em", marginRight: "0.3em" }}
+                          variant="secondary"
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          style={{ marginLeft: "0.3em", marginRight: "0.3em" }}
+                          variant="success"
+                          onClick={() => setShowProgressModal(true)}
+                        >
+                          View Progress
+                        </Button>
+                        <Button
+                          style={{ marginLeft: "0.3em", marginRight: "0.3em" }}
+                          variant="warning"
+                          onClick={() => setShowOutreachModal(true)}
+                        >
+                          Outreach numbers
+                        </Button>
+                      </Col>
+                    </Row>
+                  </Container>
+                </Card.Body>
+              </Card>
+            </Row>
+          ))}
+        </Container>
+      </div>
+      <ProgressModal
+        show={showProgressModal}
+        data={stats[0]}
+        setShowFundWithdrawalModal={() => setShowFundWithdrawalModal(true)}
+        onHide={() => setShowProgressModal(false)}
+      />
+      <OutreachModal
+        show={showOutreachModal}
+        data={stats[0]}
+        onHide={() => setShowOutreachModal(false)}
+      />
+      <FundWithdrawlModal
+        show={showFundWithdrawalModal}
+        onHide={() => setShowFundWithdrawalModal(false)}
+      />
+    </div>
+  );
+};
 
 export default MyFundraisers;
