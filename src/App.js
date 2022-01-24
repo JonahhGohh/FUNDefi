@@ -12,7 +12,8 @@ import SignUp from "./components/SignUp";
 import WidthContainer from "./components/WidthContainer";
 import PrivateRoute from "./components/PrivateRoute";
 import IndivProj from "./IndivProj";
-import Mint from "./View";
+import View from "./View";
+import Mint from "./Mint";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
               <ConnectWallet />
             </PrivateRoute>
             <PrivateRoute path="/createFundraiser">
-              <View />
+              <Mint />
             </PrivateRoute>
             <PrivateRoute path="/indivProj">
               <IndivProj />
