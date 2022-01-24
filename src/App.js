@@ -6,7 +6,6 @@ import Home from "./Home";
 import MyFundraisers from "./MyFundraisers";
 import Discover from "./Discover";
 import CreateFundraiser from "./createFundraiser";
-import ConnectWallet from "./ConnectWallet";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import WidthContainer from "./components/WidthContainer";
@@ -31,15 +30,15 @@ function App() {
             <PrivateRoute path="/fundraiser">
               <MyFundraisers />
             </PrivateRoute>
-            <PrivateRoute path="/connectWallet">
-              <ConnectWallet />
-            </PrivateRoute>
             <PrivateRoute path="/createFundraiser">
+              <CreateFundraiser />
+            </PrivateRoute>
+            <PrivateRoute path="/mint">
               <Mint />
             </PrivateRoute>
-            <PrivateRoute path="/indivProj">
+            <Route path="/indivProj">
               <IndivProj />
-            </PrivateRoute>
+            </Route>
             <Route path="/signIn">
               <WidthContainer>
                 <SignIn />

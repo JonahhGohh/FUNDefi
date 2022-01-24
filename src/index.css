@@ -1,50 +1,46 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.photo {
-  height: 200px;
-  width: 100px;
-}
-
-.photo2 {
-  height: 200px;
-  width:1200px;
 }
 
 .progress1 {
   height: 100px;
-  width: 39%;}
+  width: 39%;
+}
 
 .progress2 {
   height: 100px;
-  width: 75%;}
+  width: 75%;
+}
 
 .progress3 {
   height: 100px;
-  width: 82%;}
+  width: 82%;
+}
 
 .progress4 {
   height: 100px;
-  width: 45%;}
+  width: 45%;
+}
 
 .progress5 {
   height: 100px;
-  width: 93%;}
+  width: 93%;
+}
 
 .progress6 {
-    height: 100px;
-    width: 55%;}
+  height: 100px;
+  width: 55%;
+}
 
 .progress span {
   position: absolute;

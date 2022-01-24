@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../components/contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import "../App.css";
 
 export default function SignIn() {
   const emailRef = useRef();
@@ -26,12 +27,11 @@ export default function SignIn() {
   }
 
   return (
-    <>
+    <div className="App">
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          {JSON.stringify(currentUser)}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
@@ -55,6 +55,6 @@ export default function SignIn() {
       <div className="w-100 text-center mt-2">
         Do not have an account yet? <Link to="/signUp">Sign up!</Link>
       </div>
-    </>
+    </div>
   );
 }

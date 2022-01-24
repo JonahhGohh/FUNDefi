@@ -8,9 +8,9 @@ import FundWithdrawlModal from "./components/FundWithdrawlModal";
 export const MyFundraisers = () => {
   const stats = [
     {
-      name: "Save the forests",
+      name: "SAVE ATLANTIC RAINFOREST",
       description:
-        "This project seeks to raise awareness for the deforestation and the earth is at risk of global warming.",
+        "This project seeks to raise awareness and protect the Atlantic forest in Paraguay, Argentina and Brazil.",
       image: require("./images/forest.jpg"),
       clicks: 221,
       fundsRaised: "12,000 USD",
@@ -21,13 +21,10 @@ export const MyFundraisers = () => {
       dot: "53",
     },
     {
-      name: "Help these children",
+      name: "BUILD A SCHOOL IN ETHIOPIA",
       description:
-        "This project hopes to raise awareness for children in Kenya and the proceeds will help provide them with meals.",
+        "This project aims to raise USD$200,000 to build schools in rural Ethiopia so that education is accesible for more children.",
       image: require("./images/school.jpg"),
-      clicks: 21,
-      likes: 3,
-      price: "0.0023 eth",
     },
   ];
 
